@@ -1,0 +1,161 @@
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    background-color: rgba(244, 246, 252, 0.74);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(3, 3, 32);
+    font-size: 15px;
+}
+
+p {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+code {
+    background-color: rgba(0, 0, 0, 0.082);
+    font-size: 14px;
+    padding: 0.2rem 0.7rem;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 15px;
+    line-height: 2rem;
+}
+
+article ul {
+    padding: 1.2rem 0 1.2rem 4rem;
+}
+
+article ul li {
+    line-height: 1.6rem;
+}
+
+.body-cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.head {
+    font-size: 2.5rem;
+    background-color: rgba(14, 112, 99, 0.76);
+    color: rgb(255, 254, 245);
+    padding: 2rem 4rem;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin-bottom: 5rem;
+}
+
+.navigation {
+    display: flex;
+    position: sticky;
+    top: 12rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.7);
+    background-color: rgba(221, 226, 236, 0.74);
+    width: 800px;
+    height: min-content;
+    margin: 0 3rem 0 2rem;
+    padding: 1rem;
+}
+
+.navigation header {
+    font-size: 20px;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+.main-section {
+    padding: 2rem 5rem 2rem 3rem;
+    line-height: 1.7em;
+    margin-bottom: 2rem;
+}
+
+.main-section header {
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+img {
+    margin: 1rem;
+}
+
+.code-example {
+    background-color: rgba(8, 8, 66, 0.212);
+    padding: 1rem 4rem;
+    border-left: 3px solid rgb(8, 60, 109);
+    border-radius: 7px;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.code-example .class {
+    color: rgb(224, 55, 69);
+}
+
+.code-example .property {
+    color:rgb(65, 97, 6);
+    padding-left: 2rem;
+}
+
+.code-example .value {
+    color: blueviolet;
+}
+
+@media (max-width: 680px) {
+    p {
+        font-size: 15px;
+    }
+    .navigation {
+        position: relative;
+        top: 0;
+        width: max-content;
+        margin: 3rem auto;
+    }
+    .nav-main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        width: 100%;
+        margin: 1rem auto;
+    }
+
+    .head {
+        font-size: 1.5rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .main-section {
+        padding: 2rem;
+    }
+
+    .main-section header {
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    .code-example {
+        padding: 1rem;
+        font-size: 13px;
+    }
+
+    article ul {
+        padding: 1.2rem 0 1.2rem 2rem;
+    }
+}

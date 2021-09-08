@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Technical Documentation Page</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="body-cont">
+            <div class="head">
+                <h1>CSS Flexbox</h1>
+            </div>
+            <div class="nav-main">
+                <div class="navigation">
+                    <nav id="navbar">
+                        <header>Table of Contents</header>
+                        <ul>
+                            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+                            <li><a class="nav-link" href="#Flex_Direction">Flex Direction</a></li>
+                            <li><a class="nav-link" href="#Start_and_End_Lines">Start and End Lines</a></li>
+                            <li><a class="nav-link" href="#Alignment">Alignment</a></li>
+                            <li><a class="nav-link" href="#Wrapping">Wrapping</a></li>
+                            <li><a class="nav-link" href="#See_Also">See Also</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="main-content">
+                    <main id="main-doc">
+                        <section class="main-section" id="Introduction">
+                            <header>Introduction</header>
+                            <article>
+                                <p>
+                                    CSS Flexible Box Layout is a module of CSS that defines a CSS 
+                                    box model optimized for user interface design, and the layout 
+                                    of items in one dimension. In the flex layout model, the 
+                                    children of a flex container can be laid out in any direction,
+                                    and can “flex” their sizes, either growing to fill unused space or shrinking to
+                                    avoid overflowing the parent. Both horizontal and vertical alignment of the 
+                                    children can be easily manipulated.
+                                </p>
+                                <img src="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox/flex_terms.png">
+                            </article>
+                        </section>
+                        <section class="main-section" id="Flex_Direction">
+                            <header>Flex Direction</header>
+                            <article>
+                                <p>
+                                    When working with flexbox you need to think in terms of two
+                                     axes — the main axis and the cross axis. The main axis is
+                                      defined by the <code>flex-direction</code> property, and the cross axis
+                                       runs perpendicular to it. Everything we do with flexbox
+                                        refers back to these axes, so it is worth understanding how
+                                         they work from the outset.
+                                </p>
+                                <p>The main axis is defined by <code>flex-direction</code>, which has four possible values:</p>
+                                <ul>
+                                    <li><code>row</code></li>
+                                    <li><code>row-reverse</code></li>
+                                    <li><code>column</code></li>
+                                    <li><code>column-reverse</code></li>
+                                </ul>
+                            </article>
+                            <img class="row" src="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox/basics1.png" alt="flex-direction:row">
+                            <img class="column" src="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox/basics2.png" alt="flex-direction:column">
+                        </section>
+                        <section class="main-section" id="Start_and_End_Lines">
+                            <header>Start and End Lines</header>
+                            <p>Another vital area of understanding is how flexbox makes no 
+                                assumption about the writing mode of the document. In the 
+                                past, CSS was heavily weighted towards horizontal and 
+                                left-to-right writing modes. Modern layout methods 
+                                encompass the range of writing modes and so we no longer 
+                                assume that a line of text will start at the top left of 
+                                a document and run towards the right hand side, with new 
+                                lines appearing one under the other.</p>
+                            <p>If the <code>flex-direction</code> is <code>row</code> and I am working in English, 
+                                then the start edge of the main axis will be on the left, the end edge on the right.</p>
+                            <img src="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox/basics5.png">
+                            <p>If I were to work in Arabic, then the start edge of my main axis would be on the right and the end edge on the left.</p>
+                            <img src="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox/basics6.png">
+                            <p>In both cases the start edge of the cross axis is at the top of the flex container and the end edge at the bottom, 
+                                as both languages have a horizontal writing mode.</p>
+                        </section>
+                        <section class="main-section" id="Alignment">
+                            <header>Alignment</header>
+                            <article>
+                                <p>A key feature of flexbox is the ability to align and justify items on the main- and cross-axes, 
+                                    and to distribute space between flex items. The properties are as follows.</p>
+                                    <ul>
+                                        <li><code>justify-content</code> — controls alignment of all items on the main axis.</li>
+                                        <li><code>align-items</code> — controls alignment of all items on the cross axis.</li>
+                                        <li><code>align-self</code> — controls alignment of an individual flex item on the cross axis.</li>
+                                        <li><code>align-content</code> — described in the spec as for “packing flex lines”; controls space between flex lines on the cross axis.
+                                        </li>
+                                        <li><code>gap</code>, <code>column-gap</code>, and <code>row-gap</code> — used to create gaps or gutters between flex items.</li>
+                                    </ul>
+                                <p>In this guide, we will look at <code>align-items</code> and <code>justify-content</code>.</p>
+                                <p>
+                                    The <code>align-items</code> property will align the items on the cross axis.
+                                    The initial value for this property is stretch and this is why flex items
+                                     stretch to the height of the flex container by default. 
+                                     This might be dictated by the height of the tallest item 
+                                     in the container, or by a size set on the flex container itself.</p>
+                                <p>
+                                    You could instead set <code>align-items</code> to <code>flex-start</code> in order to 
+                                    make the items line up at the start of the flex container, 
+                                    <code>flex-end</code> to align them to the end, or <code>center</code> to align them 
+                                    in the center.</p>
+                                <div class="code-example">
+                                    <span class="class">.container</span> { <br>
+                                    <span class="property"> align-items</span>: <span class="value">flex-start | flex-end | center | baseline | stretch</span>; <br>
+                                    }
+                                </div>
+                                <br>
+                                <p>The <code>justify-content</code> property is used to align the items on 
+                                    the main axis, the direction in which <code>flex-direction</code> has 
+                                    set the flow. The initial value is <code>flex-start</code> which will 
+                                    line the items up at the start edge of the container, but 
+                                    you could also set the value to <code>flex-end</code> to line them up 
+                                    at the end, or <code>center</code> to line them up in the center.</p>
+                                <div class="code-example">
+                                    <span class="class">.container</span> { <br>
+                                        <span class="property">justify-content</span>: <span class="value">flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;</span> <br>
+                                      }
+                                </div>
+                            </article>
+                        </section>
+                        <section class="main-section" id="Wrapping">
+                            <header>Wrapping</header>
+                            <article>
+                                <p>Flexbox was designed as a single dimensional layout, 
+                                    meaning that it deals with laying out items as a row 
+                                    or as a column — but not both at once. There is however 
+                                    the ability to wrap flex items onto new lines, creating 
+                                    new rows if <code>flex-direction</code> is <code>row</code> and new columns if 
+                                    <code>flex-direction</code> is <code>column</code>.</p>
+                                <p>The initial value of the <code>flex-wrap</code> property is <code>nowrap</code>. 
+                                    This means that if you have a set of flex items that are 
+                                    too wide for their container, they will overflow it. If 
+                                    you want to cause them to wrap once they become too wide 
+                                    you must add the <code>flex-wrap</code> property with a value of <code>wrap</code>, 
+                                    or use the shorthand <code>flex-flow</code> with values of <code>row wrap</code> or 
+                                    <code>column wrap</code>.</p>
+                                <div class="code-example">
+                                    <span class="class">.container</span> { <br>
+                                        <span class="property">flex-wrap</span>: <span class="value">nowrap | wrap | wrap-reverse</span> <br> }
+                                </div>
+                            </article>
+                        </section>
+                        <hr>
+                        <section class="main-section" id="See_Also">
+                            <header>See Also</header>
+                            <p>All the information in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout" target="_blank">MDN</a>.</p>
+                        </section>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
